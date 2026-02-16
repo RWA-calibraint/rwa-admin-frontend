@@ -1,0 +1,24 @@
+.footer-button {
+  .ant-btn {
+    height: unset !important;
+    &:hover {
+      border: 1px solid var(--approve) !important;
+    }
+  }
+  .ant-btn-lg {
+    min-width: 100px !important;
+    padding: 12px 0 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 500 !important;
+    border-radius: 6px !important;
+  }
+  .back {
+    border-color: var(--approve) !important;
+    color: var(--approve) !important;
+  }
+  .continue {
+    color: var(--text-white) !important;
+    background-color: var(--icon-brand-primary) !important;
+  }
+}

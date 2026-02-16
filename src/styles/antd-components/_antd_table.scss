@@ -1,0 +1,77 @@
+.ant-table-wrapper {
+  font-family: unset !important;
+  .ant-table {
+    font-family: 'Inter', sans-serif !important;
+    .ant-table-thead {
+      ::before {
+        content: none !important;
+      }
+    }
+    .ant-table-thead > tr > th {
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      color: var(--neutral-color-500);
+      background-color: var(--background-white) !important;
+
+      .ant-checkbox-indeterminate .ant-checkbox-inner:after {
+        background-color: unset !important;
+      }
+      .ant-checkbox-checked .ant-checkbox-inner {
+        background-color: var(--check-box) !important;
+        border-color: var(--check-box) !important;
+      }
+    }
+    .ant-table-body {
+      overflow-x: auto !important; /* Keep scroll functionality */
+      overflow-y: auto !important;
+      scrollbar-width: none; /* Hide scrollbar in Firefox */
+    }
+
+    .ant-table-body::-webkit-scrollbar {
+      display: none !important; /* Hide scrollbar in Chrome, Safari, Edge */
+    }
+
+    .ant-table-tbody {
+      .ant-table-row.ant-table-row-selected > .ant-table-cell {
+        background-color: var(--background-secondary);
+      }
+      .ant-table-row {
+        .hover-container {
+          position: relative;
+          .hover-cell {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+          }
+        }
+      }
+      tr {
+        .ant-table-selection-column {
+          .ant-checkbox-checked .ant-checkbox-inner {
+            background-color: var(--check-box) !important;
+            border-color: var(--check-box) !important;
+          }
+        }
+        .ant-table-cell-row-hover {
+          background-color: var(--background-secondary) !important;
+
+          .hover-cell {
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+    .ant-table-tbody > tr:last-child > td {
+      border: none !important;
+    }
+    .ant-table-container {
+      border: 1px solid var(--neutral-color-200);
+      border-radius: 6px !important;
+      overflow: hidden;
+      .ant-checkbox .ant-checkbox-inner {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+}

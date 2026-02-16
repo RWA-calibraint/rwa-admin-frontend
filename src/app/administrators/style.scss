@@ -1,0 +1,45 @@
+.create-admin-drawer {
+  position: relative;
+}
+
+.create-admin-drawer .ant-drawer-body {
+  padding: 0px !important;
+}
+
+.create-admin-drawer .admin-drawer-header {
+  border-bottom: 1px solid var(--neutral-color-200);
+}
+
+.create-admin-drawer .admin-drawer-footer {
+  border-top: 1px solid var(--neutral-color-200);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.create-admin-drawer .admin-drawer-footer button {
+  margin: 0px !important;
+}
+
+.create-admin-drawer .admin-drawer-footer .cancel-btn {
+  width: 80px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: 1px solid var(--neutral-color-200) !important;
+  color: black !important;
+}
+
+.create-admin-drawer .admin-drawer-footer .create-btn {
+  width: 125px !important;
+}
+
+.no-pointer-row td {
+  cursor: default !important;
+}
+
+.admin-delete-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+}

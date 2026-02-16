@@ -1,0 +1,16 @@
+.custom-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

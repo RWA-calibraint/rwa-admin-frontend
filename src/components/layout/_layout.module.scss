@@ -1,0 +1,15 @@
+.layout {
+  width: 100%;
+  display: flex;
+  .side {
+    max-width: 250px;
+  }
+  .main {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: white;
+  }
+}

@@ -1,0 +1,42 @@
+.profile-container .profile-image {
+  border-radius: 50%;
+}
+
+.profile-container .profile-form-container .profile-save-button {
+  width: 100px !important;
+}
+
+.profile-container .profile-form-container .profile-change-button {
+  color: var(--brand-color-600);
+  margin-top: 6px;
+  background-color: transparent;
+  outline: none !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+.profile-container .profile-form-container .asterisk {
+  color: var(--red-color-600);
+}
+
+.profile-modal-divider {
+  width: 100%;
+  border-bottom: 2px solid var(--neutral-color-200);
+  margin: 24px 0px;
+}
+
+.change-modal-container .change-modal-footer button:first-child {
+  width: 100px !important;
+  background-color: transparent !important;
+  color: black !important;
+  box-shadow: none !important;
+  border: 1px solid var(--neutral-color-200) !important;
+}
+
+.change-modal-container .change-modal-footer button:nth-child(2) {
+  width: 185px !important;
+}
+
+.change-modal-container .ant-modal-content {
+  width: 440px !important;
+}

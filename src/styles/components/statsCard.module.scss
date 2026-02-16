@@ -1,0 +1,182 @@
+.metricCard {
+  border-radius: 12px;
+  border: 1px solid var(--stroke-primary);
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: 768px) {
+    max-width: 340px;
+    min-height: 130px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 280px;
+    min-height: 150px;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 400px;
+    min-height: 160px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 600px;
+    min-height: 190px;
+  }
+
+  @media (min-width: 2250px) {
+    max-width: 800px;
+    min-height: 280px;
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (min-width: 1440px) {
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 1rem;
+  }
+}
+.cardTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.125rem;
+  }
+}
+
+.cardValue {
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--text-primary);
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 2rem;
+  }
+}
+.iconWrapper {
+  border-radius: 8px;
+  border: 1px solid var(--stroke-primary);
+  padding: 4px;
+  background-color: var(--background-primary);
+  color: var(--text-secondary);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  padding: 1rem;
+  background-color: var(--background-primary);
+  justify-content: space-between;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+    padding: 1rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1rem;
+    padding: 1.25rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.125rem;
+    padding: 1.5rem;
+  }
+}
+.comparisonLabel {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-size: 0.9375rem;
+  line-height: 15.73px;
+  color: var(--text-tertiary);
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.125rem;
+  }
+}
+
+.changeIndicator {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.positive {
+  color: #16a34a;
+}
+
+.negative {
+  color: #dc2626;
+}

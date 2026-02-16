@@ -1,0 +1,50 @@
+@use '../settings/mixins' as *;
+
+.ant-steps {
+  font-family: unset !important;
+
+  .ant-steps-item-icon {
+    @include sizing(26px, 26px);
+  }
+
+  .ant-steps-item-active {
+    .ant-steps-item-icon {
+      background-color: var(--background-brand-lighter) !important;
+
+      .ant-steps-icon {
+        @include font(15px, 26px, 400, var(--text-white));
+      }
+    }
+  }
+
+  .ant-steps-item-wait {
+    .ant-steps-item-icon {
+      background-color: var(--background-primary) !important;
+      border: 1px solid var(--stroke-primary) !important;
+
+      .ant-steps-icon {
+        @include font(15px, 26px, 400, var(--text-tertiary));
+      }
+    }
+  }
+
+  .ant-steps-item-finish {
+    .ant-steps-item-icon {
+      border: 1px solid var(--background-brand-lighter) !important;
+      background-color: var(--background-brand) !important;
+
+      .ant-steps-icon {
+        @include font(14px, 14px, 400, var(--text-brand-secondary));
+        top: 0.5px !important;
+      }
+    }
+
+    .ant-steps-item-title::after {
+      background-color: var(--text-brand-secondary) !important;
+    }
+  }
+
+  .ant-steps-item-title {
+    @include font(15px, 26px, 400, var(--text-secondary));
+  }
+}

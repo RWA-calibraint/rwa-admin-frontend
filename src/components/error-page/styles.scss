@@ -1,0 +1,47 @@
+$error-text-color: #555;
+$error-bg-color: #f9f9f9;
+$button-bg-color: #005580;
+$button-hover-color: #003d5a;
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  height: 80vh;
+}
+
+.errorContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.errorCode {
+  font-size: 100px;
+  font-weight: bold;
+  color: $error-text-color;
+}
+
+.errorTitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--neutral-color-950);
+}
+
+.errorMessage {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--neutral-color-500);
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.homeButton {
+  width: 130px !important;
+}

@@ -1,0 +1,61 @@
+{
+  "name": "rareagora-admin-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare": "husky",
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts, tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@react-google-maps/api": "^2.20.6",
+    "@reduxjs/toolkit": "^2.6.0",
+    "antd": "^5.24.2",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "^0.475.0",
+    "next": "15.1.7",
+    "pdfjs-dist": "^4.8.69",
+    "react": "^19.0.0",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "recharts": "^2.15.1",
+    "redux-logger": "^3.0.6",
+    "slate": "^0.112.0",
+    "slate-react": "^0.112.1"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.2.7",
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/redux-logger": "^3.0.13",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "babel-plugin-react-compiler": "^19.0.0-beta-e1e972c-20250221",
+    "eslint": "^9.21.0",
+    "eslint-config-next": "15.1.7",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.1",
+    "sass": "^1.85.0",
+    "typescript": "^5"
+  }
+}

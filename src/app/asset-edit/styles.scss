@@ -1,0 +1,44 @@
+.card {
+  min-width: 400px;
+
+  @media (min-width: 1024px) {
+    min-width: 800px !important;
+  }
+
+  @media (min-width: 1440px) {
+    min-width: 1200px !important;
+  }
+
+  @media (min-width: 1880px) {
+    min-width: 1400px !important;
+  }
+
+  @media (min-width: 2040px) {
+    min-width: 1600px !important;
+  }
+}
+
+.cardContainer {
+  border-top-left-radius: '8px';
+  border-top-right-radius: '8px';
+  max-height: '70vh';
+}
+
+.cardButton {
+  width: 16px;
+  height: 16px;
+  color: '#1B7FAE';
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spinner 1s linear infinite;
+}

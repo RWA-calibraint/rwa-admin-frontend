@@ -1,0 +1,28 @@
+.ant-select-dropdown {
+  padding: 8px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  gap: 4px;
+
+  .ant-select-item {
+    padding: 6px 8px !important;
+    border-radius: 4px !important;
+    margin-bottom: 4px;
+
+    &-option-selected {
+      background: #f2f9fd !important;
+      font-weight: 500 !important;
+    }
+
+    &-option-active {
+      background: #f2f9fd !important;
+    }
+  }
+}
+
+.ant-select-selector {
+  border: none;
+  width: 120px;
+  font-size: 14px;
+  color: var(--text-secondary) !important;
+}

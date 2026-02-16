@@ -1,0 +1,12 @@
+.ant-card {
+  border: 1px solid var(--border) !important;
+  border-radius: 12px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+
+  .ant-card-body {
+    padding: 0 !important;
+  }
+}

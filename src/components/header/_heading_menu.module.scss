@@ -1,0 +1,20 @@
+.heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  border-bottom: 1px var(--neutral-color-200);
+}
+.heading-menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  button {
+    margin-top: 12px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    color: var(--icon-tertiary);
+  }
+}

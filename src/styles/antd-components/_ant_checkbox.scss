@@ -1,0 +1,15 @@
+.ant-checkbox {
+  .ant-checkbox-input {
+    &:hover {
+      border: 1 px var(--stroke-primary) !important;
+    }
+  }
+}
+
+.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+  background-color: unset !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: var(--check-box) !important;
+  border-color: var(--check-box) !important;
+}

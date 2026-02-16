@@ -1,0 +1,334 @@
+/* Other style properties */
+@use 'settings/variable' as *;
+@use 'settings/utilities';
+@use 'settings/mixins';
+
+@use 'lucide-components/lucide_icons';
+
+@use 'antd-components/antd_button';
+@use 'antd-components/antd_card';
+@use 'antd-components/ant_checkbox';
+@use 'antd-components/ant_date_picker';
+@use 'antd-components/antd_dropdown';
+@use 'antd-components/ant_input';
+@use 'antd-components/ant_layout_header';
+@use 'antd-components/antd_menu';
+@use 'antd-components/antd_modal';
+@use 'antd-components/ant_notification';
+@use 'antd-components/antd_pagination';
+@use 'antd-components/ant_select_dropdown';
+@use 'antd-components/antd_table';
+@use 'antd-components/antd_upload';
+@use 'antd-components/antd_collapse';
+@use 'antd-components/antd_skeleton';
+@use 'antd-components/antd_divider';
+@use 'antd-components/ant_select';
+@use 'antd-components/ant_tabs';
+@use 'antd-components/ant_steps';
+@use 'antd-components/anr_form';
+@use 'antd-components/antd_popover';
+@use 'antd-components/antd_avatar';
+
+@use '../components/layout/layout.module';
+@use '../components/header/heading_menu.module';
+@use '../components/side-nav/sidenav.module';
+@use '../components/asset-details/AssetDetails.module.scss';
+@use '../components/collapsible/custom_collapse';
+
+@use '../styles/components/dashboard.module.scss';
+@use '../components/edit-assets/index.module.scss';
+@use '../app/asset/rejected-assets/rejected.module.scss';
+@use '../helpers/slateEditor.module.scss';
+@use '../components/notifications/notification.module.scss';
+@use '../components/asset-details/tokens.module.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+
+.material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-selection {
+    background: transparent;
+  }
+
+  &::selection {
+    background: transparent;
+  }
+
+  &:hover,
+  &:focus {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    overflow: hidden;
+  }
+}
+
+input {
+  background-color: white !important;
+}
+
+input:-webkit-autofill {
+  background-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: white !important;
+}
+
+/* Brand color */
+
+:root {
+  /* neutral color */
+  --neutral-color-50: #fafafa;
+  --neutral-color-100: #f4f4f5;
+  --neutral-color-200: #e4e4e7;
+  --neutral-color-300: #d4d4d8;
+  --neutral-color-400: #a1a1aa;
+  --neutral-color-500: #71717a;
+  --neutral-color-600: #52525b;
+  --neutral-color-700: #3f3f46;
+  --neutral-color-800: #27272a;
+  --neutral-color-900: #18181b;
+  --neutral-color-950: #09090b;
+
+  /* Brand color */
+  --brand-color-50: #f2f9fd;
+  --brand-color-100: #e4f1fa;
+  --brand-color-200: #c3e4f4;
+  --brand-color-300: #8dcfec;
+  --brand-color-400: #50b7e0;
+  --brand-color-500: #2a9dcd;
+  --brand-color-600: #1b7fae;
+  --brand-color-700: #17658d;
+  --brand-color-800: #175675;
+  --brand-color-900: #184862;
+  --brand-color-950: #102e41;
+
+  /* Green color */
+  --green-color-50: #f2fbf2;
+  --green-color-100: #e1f7e2;
+  --green-color-200: #c4eec7;
+  --green-color-300: #95e09b;
+  --green-color-400: #5fc968;
+  --green-color-500: #3ab044;
+  --green-color-600: #2a8f32;
+  --green-color-700: #24712b;
+  --green-color-800: #215a27;
+  --green-color-900: #1d4a22;
+  --green-color-950: #0b280f;
+
+  /* Red color */
+  --red-color-50: #fff1f1;
+  --red-color-100: #ffdfdf;
+  --red-color-200: #ffc5c5;
+  --red-color-300: #ff9d9d;
+  --red-color-400: #ff6464;
+  --red-color-500: #ff4949;
+  --red-color-600: #ed1515;
+  --red-color-700: #c80d0d;
+  --red-color-800: #a50f0f;
+  --red-color-900: #881414;
+  --red-color-950: #4b0404;
+
+  /* Yellow color */
+  --yellow-color-50: #fffbeb;
+  --yellow-color-100: #fef3c7;
+  --yellow-color-200: #fde68a;
+  --yellow-color-300: #fbd24e;
+  --yellow-color-400: #fabe25;
+  --yellow-color-500: #f49d0c;
+  --yellow-color-600: #d87607;
+  --yellow-color-700: #b3520a;
+  --yellow-color-800: #91400f;
+  --yellow-color-900: #78350f;
+  --yellow-color-950: #451a03;
+
+  /* Blue color */
+  --blue-color-50: #eef8ff;
+  --blue-color-100: #d9efff;
+  --blue-color-200: #bce3ff;
+  --blue-color-300: #8ed3ff;
+  --blue-color-400: #59b8ff;
+  --blue-color-500: #3399ff;
+  --blue-color-600: #1b79f5;
+  --blue-color-700: #1463e1;
+  --blue-color-800: #174fb6;
+  --blue-color-900: #19458f;
+  --blue-color-950: #142b57;
+
+  --blue-color: #4f46e5;
+
+  --stroke-primary: #e4e4e7;
+  --text-primary: #09090b;
+  --text-secondary: var(--neutral-color-700);
+  --text-tertiary: #71717a;
+  --text-hint: var(--neutral-color-400);
+  --text-foreground: #60646c;
+  --border-graph: #01012e;
+  --background-primary: #fafafa;
+  --background-secondary: #f4f4f5;
+  --transparent: #00ffffff;
+  --success: #2a8f32;
+  --failure: #ed1515;
+  --approve: #175675;
+  --default: var(--red-color-500);
+  --hold: #6366f1;
+  --hold-badge: #4f46e5;
+  --hold-border: #e0e7ff;
+  --resubmitted: #f49d0c;
+
+  // Reference
+  --button-filled-error-text: var(--brand-color-900);
+  /* White color */
+  --white: #ffffff;
+  /* Black color */
+  --black: #000000;
+
+  /* Black color  */
+  --black-color-400: #051117;
+
+  --file-secondary: #9ca3af;
+
+  /* Icon Colors */
+  --input-icon-default: var(--neutral-color-400);
+
+  /*Side bar Colors*/
+  --side-nav-text: #f9f9f9cc;
+  --side-nav-text-hover: #f9f9f9;
+  --side-nav-text-selected: #fafafa;
+  --side-nav-background: var(--black-color-400);
+  --side-nav-hover: var(--brand-color-950);
+  --side-nav-selected: var(--brand-color-800);
+
+  /*Card Colors */
+  --border: var(--neutral-color-200);
+  --card-border: var(--neutral-color-200);
+
+  /*Text Colors*/
+  --text-primary: var(--neutral-color-950);
+  --text-secondary: var(--neutral-color-700);
+  --text-table-default: var(--neutral-color-700);
+  --text-success: var(--green-color-500);
+  --text-warning: var(--yellow-color-500);
+  --text-tertiary: var(--neutral-color-500);
+  --text-error: var(--red-color-500);
+  --text-error-secondary: var(--red-color-600);
+  --text-input-label: var(--neutral-color-950);
+  --text-white: var(--neutral-color-50);
+  --text-outline-secondary: var(--neutral-color-900);
+  --text-blue: var(--blue-color);
+  --text-cover-white: var(--white);
+  --text-brand-secondary: var(--brand-color-600);
+
+  /* Icon Colors */
+  --dropdown-icon: var(--neutral-color-950);
+  --icon-tertiary: var(--neutral-color-500);
+
+  /* Background colors */
+  --background-secondary: var(--neutral-color-100);
+  --check-box: var(--neutral-color-950);
+  --background-success: var(--green-color-100);
+  --background-white: var(--white);
+  --warning: var(--yellow-color-100);
+  --background-error: var(--red-color-100);
+  --background-soft-blue: var(--hold-border);
+  --active: #f2f9fd;
+  --icon-brand-primary: var(--brand-color-800);
+  --background-black: var(--black);
+  --background-brand: var(--brand-color-50);
+  --background-brand-lighter: var(--brand-color-600);
+
+  /* Box shadow colors */
+  --brand-tint: var(--brand-color-200);
+
+  /* Stroke colors */
+  --stroke-input-active: var(--brand-color-500);
+
+  /* Tool Tip Colors*/
+  --tooltip-blue: #1b7fae;
+}
+
+/* Basic CSS Properties added here */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px !important;
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface-overall-background);
+  height: 100%;
+  width: 100%;
+  font-family: $font-family !important;
+}
+
+:is(p, h1, h2, h3, h4, h5, h6) {
+  margin: 0px !important;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline !important;
+    color: unset !important;
+  }
+}
+
+.main-button {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none;
+  background-color: unset;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  display: inline-block;
+  max-width: 100px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spinner 1s linear infinite;
+}

@@ -1,0 +1,274 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem !important;
+}
+
+.left-panel {
+  flex: 1;
+  background-color: #003049;
+  padding: 2rem;
+  color: #eae2b7;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 40px;
+  align-items: center;
+  height: auto;
+  padding: 62px 80px 0px 80px;
+}
+
+.auth-logo {
+  max-width: 160px !important;
+  margin-left: 80px;
+
+  @media (min-width: 1024px) {
+    max-width: 150px !important;
+  }
+
+  @media (min-width: 1396px) {
+    max-width: 160px !important;
+  }
+
+  @media (min-width: 1800px) {
+    max-width: 170px !important;
+  }
+}
+
+h1 {
+  //This is applying to all h1's kindly use it only where you need it
+  // text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.illustration {
+  width: 400px !important;
+  height: auto;
+  margin: 0 auto !important;
+
+  @media (min-width: 1440px) {
+    width: 400px !important;
+  }
+
+  @media (min-width: 1800px) {
+    width: 550px !important;
+  }
+}
+
+.copyright {
+  font-size: 0.875rem;
+
+  @media (min-width: 1440px) {
+    font-size: 1.125rem !important;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 1.175rem !important;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #fff;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem !important;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding-right: 40px;
+
+    &:focus {
+      outline: none;
+      border-color: #0056b3;
+      box-shadow: 0px 0px 8px rgba(0, 86, 179, 0.5);
+    }
+  }
+
+  .pass_field {
+    position: relative;
+  }
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.forgot-btn {
+  color: #1b7fae;
+  &:hover {
+    color: #175675 !important;
+    text-decoration: none !important;
+  }
+}
+
+.error {
+  border-color: red !important;
+  border: 1px solid #ff4d4f;
+  background-color: #fff6f6;
+  box-shadow: none !important;
+}
+
+.sign-in-button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #175675;
+  margin-bottom: 8px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #175675;
+  }
+}
+
+.btn-signin {
+  color: #1b7fae;
+  margin-left: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  &:hover {
+    color: #175675 !important;
+    text-decoration: none !important;
+  }
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.verify-block {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px !important;
+  margin-bottom: 8px;
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .copyright {
+      position: static;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+
+  .right-panel {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+#user_email::placeholder,
+#user_password::placeholder {
+  color: #a1a1aa;
+}

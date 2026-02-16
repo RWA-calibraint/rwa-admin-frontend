@@ -1,0 +1,135 @@
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--stroke-primary);
+  width: 100%;
+
+  .segment {
+    outline: none !important;
+  }
+}
+
+.chartContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.chartTitle {
+  font-size: 14px;
+  font-weight: 600;
+  // margin-bottom: 12px;
+  color: var(--text-secondary);
+
+  @media (min-width: 1024px) {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1440px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1920px) {
+    font-size: 1.125rem;
+  }
+}
+
+.legendContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.legendList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+
+  @media (min-width: 1440px) {
+    font-size: 14px;
+  }
+}
+
+.legendColor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.chartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.activeSlice {
+  transition: transform 0.3s ease-out;
+}
+
+.segment {
+  transition: transform 1.3s ease-out;
+}
+
+.tooltip {
+  background: white;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media (min-width: 1440px) {
+    font-size: 13px;
+  }
+}
+
+.tooltipItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 0px;
+}
+
+.tooltipColor {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.tooltipText {
+  color: var(--text-secondary);
+}
+
+.tooltipValue {
+  color: var(--text-primary);
+}
+
+.skeletonLoader {
+  height: 250px;
+  width: 300px;
+}

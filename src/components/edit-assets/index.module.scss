@@ -1,0 +1,11 @@
+body .ant-form .ant-form-item .custom-textarea.ant-input {
+  height: 112px !important;
+  resize: none;
+}
+
+.ant-image-preview-img-wrapper {
+  img {
+    width: 600px;
+    max-height: 100% !important;
+  }
+}

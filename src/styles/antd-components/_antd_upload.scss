@@ -1,0 +1,16 @@
+.ant-upload-list.ant-upload-list-picture,
+.ant-upload-list-item.ant-upload-list-item-error {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .ant-upload-list-item-container {
+    margin-right: 8px;
+  }
+}
+
+.ant-upload-wrapper {
+  .ant-upload {
+    padding: 0 !important;
+  }
+}

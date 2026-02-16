@@ -1,0 +1,26 @@
+.ant-modal {
+  padding: 10px;
+
+  .ant-modal-content {
+    padding: 24px !important;
+    background-color: white;
+    box-shadow: none;
+    .ant-modal-body {
+      display: block;
+      width: 100%;
+      .ant-modal-footer {
+        padding: 20px;
+      }
+    }
+    .ant-modal-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      color: black;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}

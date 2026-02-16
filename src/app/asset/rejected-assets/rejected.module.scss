@@ -1,0 +1,10 @@
+.custom-tooltip.ant-tooltip .ant-tooltip-inner {
+  max-width: 300px;
+  background-color: hsl(0, 0%, 0%);
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  height: 70px !important;
+}

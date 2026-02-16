@@ -1,0 +1,39 @@
+.ant-input-affix-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px 14px !important;
+  border-color: var(--stroke-primary) !important;
+  line-height: unset !important;
+  .ant-input-affix-wrapper-focused {
+    background-color: unset !important;
+  }
+  .ant-input-prefix {
+    width: 16px;
+    height: 16px;
+    color: var(--input-icon-default);
+  }
+  input::placeholder {
+    color: var(--neutral-color-400) !important;
+  }
+  .ant-input {
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-primary) !important;
+  }
+  .ant-input-suffix {
+    width: 16px;
+    height: 16px;
+    color: var(--input-icon-default);
+  }
+}
+
+.ant-input-affix-wrapper-focused {
+  background-color: transparent !important;
+}
+
+.ant-input-outlined:focus-within {
+  box-shadow: 0 0 0 2px var(--brand-tint) !important;
+  border-color: var(--stroke-input-active) !important;
+}

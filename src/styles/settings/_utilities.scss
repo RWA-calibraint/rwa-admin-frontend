@@ -1,0 +1,701 @@
+@use 'sass:list';
+@use 'sass:map';
+
+/* Margin and Padding properties */
+
+$spaceOrigin:
+  'm' margin,
+  'p' padding;
+$spacePosition:
+  't' top,
+  'b' bottom,
+  'l' left,
+  'r' right;
+$spacePositionXY:
+  'x' left right,
+  'y' top bottom;
+$spaceSizing:
+  -12 -0.75,
+  -5 -0.313,
+  0 0,
+  2 0.125,
+  4 0.25,
+  8 0.5,
+  6 0.375,
+  10 0.625,
+  12 0.75,
+  14 0.875,
+  16 1,
+  18 1.125,
+  20 1.25,
+  22 1.375,
+  24 1.5,
+  28 1.8,
+  32 2,
+  40 2.5,
+  434 27.125,
+  36 2.25,
+  40 2.5,
+  90 5.625,
+  100 6.25;
+
+@each $origin in $spaceOrigin {
+  @each $position in $spacePosition {
+    @each $size in $spaceSizing {
+      .#{list.nth($origin, 1)}-#{list.nth($position, 1)}-#{list.nth($size, 1)} {
+        #{list.nth($origin, 2)}-#{list.nth($position, 2)}: #{list.nth($size, 2)}rem !important;
+      }
+    }
+  }
+}
+
+@each $origin in $spaceOrigin {
+  @each $position in $spacePositionXY {
+    @each $size in $spaceSizing {
+      .#{list.nth($origin, 1)}-#{list.nth($position, 1)}-#{list.nth($size, 1)} {
+        #{list.nth($origin, 2)}-#{list.nth($position, 2)}: #{list.nth($size, 2)}rem !important;
+        #{list.nth($origin, 2)}-#{list.nth($position, 3)}: #{list.nth($size, 2)}rem !important;
+      }
+    }
+  }
+}
+
+@each $origin in $spaceOrigin {
+  @each $size in $spaceSizing {
+    .#{list.nth($origin, 1)}-#{list.nth($size, 1)} {
+      #{list.nth($origin, 2)}: #{list.nth($size, 2)}rem !important;
+    }
+  }
+}
+
+/* Display properties */
+$displayContent: flex, block, inline-block, inline-flex, grid, none;
+
+@each $display in $displayContent {
+  .d-#{$display} {
+    display: #{$display};
+  }
+}
+
+/* Flex size properties */
+$flexSize: 1, 4;
+
+@each $size in $flexSize {
+  .flex-#{$size} {
+    flex: #{$size};
+  }
+}
+
+/* Flex direction properties */
+$flexDirection: column;
+
+@each $direction in $flexDirection {
+  .flex-#{list.nth($direction, 1)} {
+    flex-direction: #{list.nth($direction, 1)};
+  }
+}
+
+/* Align Items properties */
+$alignItems: center, flex-end, flex-end, baseline;
+
+@each $align in $alignItems {
+  .align-#{$align} {
+    align-items: #{$align};
+  }
+}
+
+/* Justify content properties */
+$justifyContent: center, space-between, flex-end, flex-start;
+
+@each $justify in $justifyContent {
+  .justify-#{$justify} {
+    justify-content: #{$justify};
+  }
+}
+
+/* Cursor pointer properties */
+$cursorPointer: pointer, default;
+
+@each $cursor in $cursorPointer {
+  .cursor-#{$cursor} {
+    cursor: #{$cursor} !important;
+  }
+}
+
+/* Flex Wrap Properties */
+$flexWrap: nowrap, wrap, wrap-reverse;
+
+@each $wrap in $flexWrap {
+  .flex-#{$wrap} {
+    flex-wrap: #{$wrap};
+  }
+}
+
+$alignSelf: auto, start, end, center, baseline, stretch;
+
+@each $align in $alignSelf {
+  .self-#{$align} {
+    align-self: #{$align};
+  }
+}
+
+$grid-cols: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+
+@each $col in $grid-cols {
+  .grid-cols-#{$col} {
+    display: grid;
+    grid-template-columns: repeat(#{$col}, minmax(0, 1fr));
+  }
+}
+
+@each $row in $grid-cols {
+  .grid-rows-#{$row} {
+    display: grid;
+    grid-template-rows: repeat(#{$row}, minmax(0, 1fr));
+  }
+}
+
+/* Width properties */
+$width:
+  3, 4, 10, 12, 14, 16, 20, 40, 44, 50, 68, 93, 98, 115, 116, 120, 136, 165, 170, 200, 204, 207, 214, 3, 4, 12, 14, 16,
+  50, 68, 115, 116, 120, 136, 155, 165, 170, 200, 204, 207, 214, 240, 220, 230, 250, 260, 266, 270, 280, 300, 346, 350,
+  380, 400, 440, 460, 500, 550, 800;
+
+@each $width in $width {
+  .w-#{$width} {
+    width: $width + px !important;
+  }
+}
+
+/* Width in percentage properties */
+$widthPercentage:
+  5 5% 25 25%,
+  40 40%,
+  50 50%,
+  60 60%,
+  80 80%,
+  90 90%,
+  100 100%;
+
+@each $widthName, $widthValue in $widthPercentage {
+  .width-#{$widthName} {
+    width: #{$widthValue};
+  }
+}
+
+/* Min Width properties */
+$minWidth: 0, 10, 93, 120, 350;
+
+@each $width in $minWidth {
+  .min-w-#{$width} {
+    min-width: #{$width}px !important;
+  }
+}
+
+/* Max Width properties */
+$maxWidth: 120, 240, 250, 260, 350, 432, 460, 436, 500;
+
+@each $width in $maxWidth {
+  .max-w-#{$width} {
+    max-width: #{$width}px;
+  }
+}
+
+/* Border radius properties */
+$borderRadius: 0, 2, 4, 6, 8, 10, 12, 16, 100;
+
+@each $radiusValue in $borderRadius {
+  .radius-#{$radiusValue} {
+    border-radius: #{$radiusValue}px;
+  }
+
+  // Two values (top/bottom, left/right)
+  @each $secondRadiusValue in $borderRadius {
+    .radius-#{$radiusValue}-#{$secondRadiusValue} {
+      border-radius: #{$radiusValue}px #{$secondRadiusValue}px;
+    }
+
+    // Four values (top-left, top-right, bottom-right, bottom-left)
+    @each $thirdRadiusValue in $borderRadius {
+      @each $fourthRadiusValue in $borderRadius {
+        .radius-#{$radiusValue}-#{$secondRadiusValue}-#{$thirdRadiusValue}-#{$fourthRadiusValue} {
+          border-bottom-left-radius: #{$fourthRadiusValue}px;
+          border-bottom-right-radius: #{$thirdRadiusValue}px;
+          border-top-right-radius: #{$secondRadiusValue}px;
+          border-top-left-radius: #{$radiusValue}px;
+        }
+      }
+    }
+  }
+}
+
+/* Border width + color Properties here */
+$borderColor: (
+  'primary' var(--stroke-primary),
+  'brand' var(--border-brand),
+  'black' var(--border-black),
+  'secondary' var(--border-secondary),
+  'tertiary' var(--border-tertiary),
+  'dropdown-default' var(--dropdown-default-stroke),
+  'modal-stroke' var(--modal-stroke),
+  'surface-overall' var(--surface-overall-background),
+  'info-message' var(--info-message-warning-stroke),
+  'text-success' var(--text-success),
+  'btn-outline-error' var(--button-outline-error-default),
+  'status-outer-red' var(--red-color-200),
+  'status-outer-green' var(--green-color-200),
+  'selected-image' var(--brand-color-600),
+  'error' var(--text-error),
+  'success' var(--success),
+  'resubmitted' var(--yellow-color-200),
+  'red' var(--default),
+  'hold' var(--hold-border),
+  'failure' var(--failure),
+  'main' var(--brand-color-800),
+  'brand-color' var(--brand-color-800),
+  'white' var(--white)
+);
+$borderPosition: top, right, bottom, left;
+$borderPositionAll: all;
+$borderWidth: 0, 1, 3, 5, 52;
+
+@each $color in $borderColor {
+  @each $position in $borderPosition {
+    @each $width in $borderWidth {
+      .border-#{$position}-#{list.nth($color, 1)}-#{$width} {
+        border-#{$position}: #{$width}px solid #{list.nth($color, 2)} !important;
+      }
+    }
+  }
+}
+
+@each $color in $borderColor {
+  @each $position in $borderPositionAll {
+    @each $width in $borderWidth {
+      .border-#{list.nth($color, 1)}-#{$width} {
+        border: #{$width}px solid #{list.nth($color, 2)} !important;
+      }
+    }
+  }
+}
+
+@each $position in $borderPosition {
+  .border-#{$position}-none {
+    border-#{$position}: none !important;
+  }
+}
+
+/* Image sizes properties */
+$imageSize: 8, 16, 20, 22, 24, 40;
+
+@each $size in $imageSize {
+  .img-#{$size} {
+    width: #{$size}px;
+    height: #{$size}px;
+  }
+}
+
+/* Image fit properties */
+$imageFit: cover, contain, fill, none, scale-down;
+
+@each $fit in $imageFit {
+  .img-fit-#{$fit} {
+    object-fit: #{$fit};
+  }
+}
+
+/* Overflow properties here */
+$overflow: hidden, auto;
+
+@each $overflow in $overflow {
+  .overflow-#{$overflow} {
+    overflow: #{$overflow};
+  }
+}
+
+/* Text align Properties */
+$textAlign: center, right, left;
+
+@each $align in $textAlign {
+  .text-#{$align} {
+    text-align: $align !important;
+  }
+}
+
+$heightSize: 65, 72;
+
+@each $size in $heightSize {
+  .v-h-#{$size} {
+    height: #{$size}vh;
+  }
+}
+
+/* Height calculation properties */
+$heightSize: 48, 44, 65, 100;
+
+@each $size in $heightSize {
+  .h-calc-#{$size} {
+    height: calc(100vh - #{$size}px);
+  }
+}
+
+/* Height properties */
+
+$heightSize: 3, 4, 5, 10, 11, 12, 14, 16, 18, 20, 26, 32, 36, 40, 44, 48, 90, 200, 250, 300, 380, 500, 700, 800;
+
+@each $size in $heightSize {
+  .h-#{$size} {
+    height: #{$size}px !important;
+  }
+}
+
+/* Min Height properties */
+$minHeight: 10, 33, 120, 200, 500;
+
+@each $height in $minHeight {
+  .min-h-#{$height} {
+    min-height: $height + px;
+  }
+}
+
+/* Max Height Properties */
+$maxHeight: 280, 436, 500, 610;
+
+@each $height in $maxHeight {
+  .max-h-#{$height} {
+    max-height: $height + px;
+  }
+}
+
+/* Height in percentage */
+$heightPercentage:
+  50 50%,
+  70 70%,
+  80 80%,
+  100 100%;
+
+@each $heightName, $heightValue in $heightPercentage {
+  .height-#{$heightName} {
+    height: #{$heightValue};
+  }
+}
+
+/* Font Properties Here  */
+$colors:
+  'b-f-e-t' var(--button-filled-error-text),
+  'b' var(--button-filled-error-text),
+  'primary' var(--text-primary),
+  'secondary' var(--text-secondary),
+  'tertiary' var(--text-tertiary),
+  'hint' var(--text-hint),
+  't-d' var(--text-table-default),
+  'logo' var(--neutral-color-50),
+  'success' var(--text-success),
+  'error' var(--text-error),
+  'error-s' var(--red-color-600),
+  'red' var(--default),
+  'warning' var(--text-warning),
+  'badge-warning' var(--yellow-color-500),
+  'success' var(--success),
+  'badge-success' var(--green-color-500),
+  'failure' var(--failure),
+  'green' var(--green-color-500),
+  'white' var(--text-white),
+  'brand-white' var(--neutral-color-50),
+  'black' black,
+  'active' var(--brand-color-800),
+  'blue-icon' var(--brand-color-600),
+  'tertiary' var(--neutral-color-400),
+  'blue' var(--text-blue),
+  'hold' var(--hold),
+  'badge-hold' var(--hold-badge),
+  'selected-image' var(--brand-color-600),
+  'status-red' var(--red-color-600),
+  'o-s' var(--text-outline-secondary),
+  'err-text' var(--red-color-500),
+  'brand-secondary' var(--text-brand-secondary);
+
+$textSize:
+  10 0.625,
+  12 0.75,
+  13 0.813,
+  14 0.9,
+  15 0.9375,
+  16 1,
+  18 1.125,
+  20 1.25,
+  24 1.5,
+  28 1.75;
+
+$lineHeight: 12, 14, 16, 17, 18, 20, 22, 24, 30, 34;
+$fontWeight: 400, 500, 600, 700, 800;
+
+@each $size, $sizeValue in $textSize {
+  @each $height in $lineHeight {
+    @if ($height > $size) {
+      @each $weight in $fontWeight {
+        @each $colorName, $colorValue in $colors {
+          .f-#{$size}-#{$height}-#{$weight}-#{$colorName} {
+            font-size: #{$sizeValue}rem;
+            line-height: #{$height}px;
+            font-weight: #{$weight};
+            color: #{$colorValue};
+          }
+        }
+      }
+    }
+  }
+}
+
+$fontFamily:
+  'brand' 'Bricolage Grotesque',
+  'primary' 'Inter';
+
+@each $familyName, $familyValue in $fontFamily {
+  .font-#{$familyName} {
+    font-family: #{$familyValue} !important;
+  }
+}
+
+/* Icon Color properties */
+$colors:
+  'primary' var(--neutral-color-950),
+  'icon-default' var(--input-icon-default),
+  'white' var(--white),
+  'brand-secondary' var(--brand-color-600);
+
+@each $colorName, $colorValue in $colors {
+  .icon-#{$colorName} {
+    color: $colorValue;
+  }
+}
+
+/* Background Color Properties*/
+$bgColor:
+  'primary' var(--surface-primary),
+  'sidenav' var(--black-color-400),
+  'success' var(--success),
+  'warning' var(--warning),
+  'error' var(--background-error),
+  'brand-color' var(--brand-color-800),
+  'badge-bg' var(--neutral-color-100),
+  'badge-bg-blue' var(--hold-border),
+  're-submitted' var(--resubmitted),
+  'status-red' var(--red-color-600),
+  'status-green' var(--green-color-600),
+  'status-outer-red' var(--red-color-200),
+  'status-outer-green' var(--green-color-200),
+  'background-primary' var(--background-primary),
+  'no-document' var(--brand-color-50),
+  'secondary' var(--background-secondary),
+  'transparent' var(--transparent),
+  'approve-button' var(--approve),
+  'disabled-blue' var(--brand-color-600),
+  'disabled-red' var(--red-color-300),
+  'default-button' var(--default),
+  'light-green' var(--green-color-100),
+  'hold' var(--hold),
+  'token' var(--approve),
+  'active' var(--active),
+  'badge-error' var(--red-color-100),
+  'chip-refund' var(--background-soft-blue),
+  'chip-success' var(--background-success),
+  'i-c-p' var(--icon-brand-primary),
+  'white' white,
+  'black' var(--background-black),
+  'hold-secondary' var(--brand-color-50),
+  'error-secondary' var(--red-color-50),
+  'brand' var(--brand-color-50),
+  'brand-secondary' var(--brand-color-600),
+  'tooltip-blue' var(--tooltip-blue);
+
+@each $colorName, $colorValue in $bgColor {
+  .bg-#{$colorName} {
+    background-color: $colorValue !important;
+  }
+}
+
+/* Position relative properties */
+$position: relative, absolute, fixed, sticky;
+
+@each $positionName in $position {
+  .position-#{$positionName} {
+    position: $positionName;
+  }
+}
+
+/*Gap property*/
+$gapSizes: 1 2 3 4 5 6 7 8 9 10 12 14 16 18 20;
+
+@each $gap in $gapSizes {
+  .gap-#{$gap} {
+    gap: $gap * 4px;
+  }
+}
+
+/* Location properties */
+$locationSize: -44, 0, 8, 23, 28, 35, 52, 55, 57, 60, 66, 72, 85, 95, 120, 125;
+$locationSizePercent:
+  50 50%,
+  83 83%;
+$locationName: top, left, right, bottom;
+
+@each $location in $locationName {
+  @each $size in $locationSize {
+    .#{$location}-#{$size} {
+      #{$location}: #{$size}px;
+    }
+  }
+}
+
+@each $location in $locationName {
+  @each $sizeName, $sizePercent in $locationSizePercent {
+    .#{$location}-p-#{$sizeName} {
+      #{$location}: $sizePercent;
+    }
+  }
+}
+
+/* Z-Index properties here */
+$zIndexSize: 1, 2, 10;
+
+@each $indexSize in $zIndexSize {
+  .z-index-#{$indexSize} {
+    z-index: $indexSize;
+  }
+}
+
+/*Box shadow properties*/
+$BoxShadow: none;
+
+@each $shadow in $BoxShadow {
+  .shadow-#{$shadow} {
+    box-shadow: $shadow;
+  }
+}
+
+/* Color Map with Default, Hover, and Disabled */
+$buttonColors: (
+  'primary': (
+    'default': var(--brand-color-800),
+    'hover': var(--brand-color-900),
+    'disabled': var(--brand-color-800),
+    'hover-outline-text': var(--brand-color-50),
+    'color': var(--neutral-color-50),
+    'color-outline': var(--brand-color-800),
+  ),
+  'secondary': (
+    'default': var(--neutral-color-900),
+    'hover': var(--neutral-color-700),
+    'disabled': var(--neutral-color-900),
+    'hover-outline-text': var(--neutral-color-50),
+    'color': var(--neutral-color-100),
+    'color-outline': var(--neutral-color-900),
+  ),
+  'success': (
+    'default': var(--green-color-500),
+    'hover': var(--green-color-600),
+    'disabled': var(--green-color-500),
+    'hover-outline-text': var(--green-color-50),
+    'color': var(--neutral-color-50),
+    'color-outline': var(--green-color-500),
+  ),
+  'error': (
+    'default': var(--red-color-500),
+    'hover': var(--red-color-600),
+    'disabled': var(--red-color-500),
+    'hover-outline-text': var(--red-color-50),
+    'color': var(--neutral-color-50),
+    'color-outline': var(--red-color-500),
+  ),
+);
+
+$buttonTypes: 'default', 'outline', 'text';
+$buttonSizes: 'default', 'large';
+
+$padding-default: 8px 16px;
+$height-default: 40px;
+$height-large: 44px;
+$font-size-default: 14px;
+$font-size-large: 14px;
+$border-radius: 6px;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  padding: $padding-default;
+  font-size: $font-size-default;
+  height: $height-default;
+
+  &.lg {
+    padding: $padding-default;
+    font-size: $font-size-large;
+    height: $height-large;
+  }
+
+  // Loop to generate color variations, type, and states
+  @each $colorName, $colorMap in $buttonColors {
+    @each $type in $buttonTypes {
+      // Default state
+      &-#{$colorName}-#{$type} {
+        $default-color: map.get($colorMap, 'default');
+        $hover-color: map.get($colorMap, 'hover');
+        $disabled-color: map.get($colorMap, 'disabled');
+        $hover-outline-text-color: map.get($colorMap, 'hover-outline-text');
+        $color: map.get($colorMap, 'color');
+        $color-outline: map.get($colorMap, 'color-outline');
+
+        @if $type == 'default' {
+          background-color: #{$default-color};
+          color: #{$color};
+          border: 1px solid #{$default-color};
+        } @else if $type == 'outline' {
+          background-color: transparent;
+          color: #{$color-outline};
+          border: 1px solid #{$default-color};
+        } @else if $type == 'text' {
+          background-color: transparent;
+          color: #{$color-outline};
+          border: none;
+        }
+
+        // Hover state
+        &:hover:not(.disabled) {
+          @if $type == 'default' {
+            background-color: #{$hover-color};
+            border-color: #{$hover-color};
+            color: #{$color};
+          } @else if $type == 'outline' {
+            background-color: #{$hover-outline-text-color};
+            color: #{$color-outline};
+            border-color: #{$hover-color};
+          } @else if $type == 'text' {
+            background-color: #{$hover-outline-text-color};
+          }
+        }
+
+        // Disabled state
+        &.disabled {
+          background-color: if($type == 'text' or $type == 'outline', transparent, $disabled-color);
+          border-color: if($type == 'text', transparent, $disabled-color);
+          pointer-events: none;
+          opacity: 0.5;
+
+          @if $type == 'default' {
+            color: #{$color};
+          } @else if $type == 'outline' {
+            color: #{$color-outline};
+          } @else if $type == 'text' {
+            color: #{$color-outline};
+          }
+        }
+      }
+    }
+  }
+}
